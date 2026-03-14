@@ -25,13 +25,35 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+**game's purpose.**
+The purpose of the game is to be a number guessing game. There are three difficulties in which the number of attempts you have along with the possible range of the number varies. Your aim is to get the guess in the least amount of tries to maximize your score.
+
+
+
+**Bugs found**
+
+Some bugs I found were that : \n
+
+- the secret number kept changing: it was generated unconditionally at the top level
+- hints were inverted: a guess that was too high printed out too low and vice versa
+- the invalid input (i.e. strings) were being counted as attempts and breaking attempt count logic
+- new games ignored difficulty. range was 1-100 regardless
+
+
+
+
+**fixes applied.**
+- secret number: Fixed with the if "secret" not in st.session_state guard.
+- inverted hints: just inverted them back
+- invalid inputs: checked for valid input before incrementing attempts
+- game difficulty: fixed the if statements to show proper ranges based on selected difficulty
+
+
 
 ## 📸 Demo
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
+![Winning game](image.png)
 
 ## 🚀 Stretch Features
 
